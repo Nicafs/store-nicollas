@@ -17,7 +17,7 @@
                     </mat-card-content>
 
                     <mat-card-actions>
-                        <button mat-button routerLink="/product" class="btn primary">COMPRAR</button>
+                        <button mat-button routerLink="/product" [queryParams]="{id: item.id}" class="btn primary">COMPRAR</button>
                     </mat-card-actions>
 
                 </mat-card>

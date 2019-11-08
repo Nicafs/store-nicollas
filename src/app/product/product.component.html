@@ -1,1 +1,30 @@
-<p>product works!</p>
+<div class="row" *ngIf="item != null">
+    <div class="col-sm-6">
+        <img [src]="item.images[0].url" 
+            class="img-responsive" 
+            [alt]="item.title">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto"  #cara="Carousel" [animationDuration]="300">
+                <div class="carousel-item col-md-3" *ngFor="let imagem of item.images; let i= index" [ngClass]="{'active': i < 4}">
+                    <img [src]="imagem.url" class="d-block w-100">
+                </div>
+            </div>
+            <a class="carousel-control-prev" role="button" (click)="cara.prev(qtdImgTransition, i, item.images.lenght)">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" role="button" (click)="cara.next(qtdImgTransition, i, item.images.lenght)">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </div>
+        
+    <div class="col-sm-6">
+        <p>{{item.title}}</p>
+        <p [innerHTML]="item.description"></p>
+        <p>{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
+        <button mat-button routerLink="/payment" queryParams="id: item.id" class="btn primary">COMPRAR</button>
+    </div>
+</div>

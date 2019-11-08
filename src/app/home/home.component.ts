@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from './services/home.service';
 import { Itens } from './model/itens';
@@ -6,8 +6,7 @@ import { Itens } from './model/itens';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 

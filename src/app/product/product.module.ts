@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { ProductComponent } from './product.component';
 
-
-
+import { CarouselDirective } from '../carousel.directive';
 @NgModule({
-  declarations: [ProductComponent],
+  declarations: [ProductComponent, CarouselDirective],
   imports: [
     CommonModule
   ]
 })
+
 export class ProductModule { }
