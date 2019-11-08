@@ -1,59 +1,3 @@
-.logo {
-    background-image: url(../../assets/logo.jpg);
-    background-size: auto 57px;
-    background-repeat: no-repeat;
-    width: 112px;
-    height: 57px;
-    font-size: 0;
-    text-indent: 100%;
-    display: block;
-}
-
-.header-search-box { flex: 1; padding: 0 30px; }
-    
-.search-box { display: block; float: left; position: relative; width: 90%;}
-    
-.search-box form input {
-    background: #fff;
-    border: solid 1px #ccc;
-    color: #444;
-    width: 100%;
-    padding-left: 35px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    border-radius: 2px 0 0 2px;
-    box-shadow: none;
-}
-
-.search-submit {
-    min-width: 10%;
-    margin: 0;
-    padding: 0;
-    border-radius: 0 3px 3px 0;
-    position: relative;
-    z-index: 2;
-    height: 40px;
-    color: #fff;
-    background-color: #13ab8e;
-    box-shadow: none;
-}
-
-.search-submit:hover { background-color: #21c8a8; }
-
-.search-icon{ position: absolute; z-index: 100; padding: 7px; color:#979191; color: #979191; opacity: 0.7;}
-
-.mat-menu-panel { background: #fff; }
-.mat-menu-content { padding: 10px; }
-.mat-menu-item { color: #000; outline: none !important; }
-.mat-menu-item:hover { background-color: #13ab8e !important; border-radius: 5px;}
-.mat-divider { background: #979191; margin: 5px 0px !important;}
-
-.cart-title { font-size: 1.4em; text-align: center; display: block; color: #444; margin-bottom: 5px; }
-.cart-description { font-size: 1.2em; text-align: center; display: block; color: #999; margin-bottom: 20px;}
-
 .card-product { margin-bottom:10px; background-color: transparent; color: inherit; }
 
 .list-item-img { overflow: hidden; height: 150px;}
@@ -69,7 +13,7 @@
     -webkit-box-orient: vertical;
     margin: 10px 0px 5px -16px !important}
 
-.list-item-content-txt {float:right; color:#63cc15;}
+.list-item-content-txt {float:right; color: #13ab8e; font-weight: bold; font-size: 1.3em; }
 
 .thumbnail {
     margin: 0 !important;
@@ -89,54 +33,3 @@
 .zoom:hover {
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
-
-
-
-
-/* HEADER */
-.header-content {
-    background: #fff;
-    position: relative;
-    z-index: 9;
-    top: 0;
-}
-
-.header-content>.container {
-    height: 75px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-@media (min-width: 768px) {
-.header-right, .header-search-box, .logo-container {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    vertical-align: middle;
-    }
-}
-
-@media (min-width: 768px)  {
-.header-right-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    }
-}
-
-header.fixed {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 8;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-/* HEADER */
