@@ -4,7 +4,7 @@
             <!-- Para um dataSource futuro -->
             <!-- table mat-table [dataSource]="dataSource" matSort -->
 
-            <div class="col-xs-6 col-lg-3" *ngFor="let item of itens">
+            <div class="col-xs-6 col-lg-3" *ngFor="let item of itens | slice: pagination.currentPage * pagination.recordsPerPage : (pagination.currentPage + 1) * pagination.recordsPerPage">
                 
                 <mat-card class="card-product">
                     <div class="list-item-img">
@@ -27,5 +27,8 @@
 
             </div>
         </div>
+        
+
+        <app-pagination [(pagination)]="pagination" class="row"></app-pagination>
     </div>   
 </div>

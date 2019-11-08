@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatPaginatorModule, MatPaginatorIntl} from '@angular/material/paginator';
+import {CustomPaginator} from './pagination/custom-paginator';
 
 // HOME
 import { HomeComponent } from './home/home.component';
@@ -43,10 +45,14 @@ import { PaginationComponent } from './pagination/pagination.component';
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
+    MatPaginatorModule,
     ProductModule,
     PaymentModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [
+  { provide: LOCALE_ID, useValue: 'pt' }, 
+  {provide: MatPaginatorIntl, useClass: CustomPaginator }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

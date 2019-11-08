@@ -7,7 +7,7 @@ export interface IPagination {
 
 export class Pagination implements IPagination {
     currentPage = 0;
-    recordsPerPage = 10;
+    recordsPerPage = 8;
     totalRecords = 0;
     columnOrder = '';
 }

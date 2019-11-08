@@ -6,7 +6,7 @@ import { IPagination, Pagination } from './pagination';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent  {
+export class PaginationComponent {
   @Input() pagination: IPagination = new Pagination();
   @Output() pageChanged: EventEmitter<IPagination> = new EventEmitter();
 
