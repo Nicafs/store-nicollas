@@ -43,10 +43,6 @@ export class CarouselDirective implements OnInit {
     ]);
   }
 
-  @HostListener('click') onClick(steps, index, total) {
-    this.next(steps, index, total);
-  }
-
   next(steps, index, total) {
       let active   = this.el.nativeElement.querySelectorAll('.carousel-item.active');
       let inactive = this.el.nativeElement.querySelector('.carousel-item:not(.active)');

@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit {
   item: Item;
   qtdImgList: 4;
   qtdImgTransition: 1;
+  indexImg = 0;
 
   constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private globalService: GlobalService) { 
    
@@ -30,6 +31,10 @@ export class ProductComponent implements OnInit {
           .subscribe( item => { this.item = item; this.globalService.setCart(item); });
       }
     });
+  }
+
+  changeImg(index) {
+    this.indexImg = index;
   }
 
 

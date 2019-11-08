@@ -1,13 +1,13 @@
 <div class="row" *ngIf="item != null">
     <div class="col-sm-6">
-        <img [src]="item.images[0].url" 
+        <img [src]="item.images[indexImg].url" 
             class="img-responsive" 
             [alt]="item.title">
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner row w-100 mx-auto"  #cara="Carousel" [animationDuration]="300">
                 <div class="carousel-item col-md-3" *ngFor="let imagem of item.images; let i= index" [ngClass]="{'active': i < 4}">
-                    <img [src]="imagem.url" class="d-block w-100">
+                    <img [src]="imagem.url" class="d-block w-100" (click)="changeImg(i)">
                 </div>
             </div>
             <a class="carousel-control-prev" role="button" (click)="cara.prev(qtdImgTransition, i, item.images.lenght)">
@@ -22,9 +22,9 @@
     </div>
         
     <div class="col-sm-6">
-        <p>{{item.title}}</p>
-        <p [innerHTML]="item.description"></p>
-        <p>{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
+        <p><strong>{{item.title}}</strong></p>
+        <p style="font-size: 0.9em; color:gray;" [innerHTML]="item.description"></p>
+        <p style="color: #259b24;">{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
         <button mat-button routerLink="/payment" [queryParams]="{itemList: itemList}" class="btn primary">COMPRAR</button>
     </div>
 </div>
