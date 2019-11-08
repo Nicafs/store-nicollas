@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatStepperModule,
     MatCheckboxModule,
     MatIconModule,
+    MatSelectModule,
     FormsModule, 
     ReactiveFormsModule
   ]

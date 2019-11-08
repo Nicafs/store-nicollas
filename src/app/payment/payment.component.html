@@ -1,142 +1,171 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Preencha suas Informações</ng-template>
-        <mat-card class="payment-card">
-            <mat-card-header>
-                <mat-card-title>Usuário</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-                <form [formGroup]="firstFormGroup" id="firstFormGroup" class="col-md-6">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Nome Completo</mat-label>
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                        <input matInput formControlName="profNameCtrl" type="text" aria-label="Nome Completo" placeholder="Nome Completo" name="profile-name">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <mat-icon matSuffix>email</mat-icon>
-                        <input matInput formControlName="profEmailCtrl" type="text" aria-label="E-mail" placeholder="E-mail" name="profile-email">
-                    </mat-form-field>
 
-                    <table class="full-width" cellspacing="0">
-                        <tr>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                    <mat-label>CPF</mat-label>
-                                    <mat-icon matSuffix>picture_in_picture</mat-icon>
-                                    <input matInput formControlName="profCpfCtrl" type="text" aria-label="CPF" placeholder="CPF" name="profile-cpf">
-                                </mat-form-field>
-                            </td>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                        <mat-label>Telefone</mat-label>
-                                    <mat-icon matSuffix>phone</mat-icon>
-                                    <input matInput formControlName="profTelCtrl" type="text" aria-label="Telefone" placeholder="Telefone" name="profile-tel">
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                    </table>
-                    <mat-checkbox>Quero receber e-mails com promoções.</mat-checkbox>
-                </form>
-            </mat-card-content>
-            <mat-card-actions>
-                    <button mat-button matStepperNext>Próximo</button>
-            </mat-card-actions>
-        </mat-card>
+        <div class="row pay-step-title no-gutters">       
+            <p>Solicitamos apenas as informações essenciais para a realização da compra.</p>
+        </div>
+        
+        <div class="row pay-step-content no-gutters">
+            <form [formGroup]="firstFormGroup" id="firstFormGroup" class="col-md-8">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome Completo</mat-label>
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <input matInput formControlName="profNameCtrl" type="text" aria-label="Nome Completo" placeholder="Nome Completo" name="profile-name">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <input matInput formControlName="profEmailCtrl" type="text" aria-label="E-mail" placeholder="E-mail" name="profile-email">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="col-md-6">
+                    <mat-label>CPF</mat-label>
+                    <mat-icon matSuffix>picture_in_picture</mat-icon>
+                    <input matInput formControlName="profCpfCtrl" type="text" aria-label="CPF" placeholder="CPF" name="profile-cpf">
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="col-md-6">
+                    <mat-label>Telefone</mat-label>
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <input matInput formControlName="profTelCtrl" type="text" aria-label="Telefone" placeholder="Telefone" name="profile-tel">
+                </mat-form-field>
+
+                <mat-checkbox>Quero receber e-mails com promoções.</mat-checkbox>
+            </form>
+        </div>
+
+        <div class="row pay-step-buttons no-gutters">
+            <button mat-button matStepperNext class="btn primary">Próximo</button>
+        </div>
     </mat-step>
+
     <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>Preencha seu Endereço</ng-template>
-        <mat-card class="payment-card">
-            <mat-card-header>
-                <mat-card-title>Usuário</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-                <form [formGroup]="secondFormGroup" id="secondFormGroup" class="col-md-6">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Nome Completo</mat-label>
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                        <input matInput formControlName="profNameCtrl" type="text" aria-label="Nome Completo" placeholder="Nome Completo" name="profile-name">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <mat-icon matSuffix>email</mat-icon>
-                        <input matInput formControlName="profEmailCtrl" type="text" aria-label="E-mail" placeholder="E-mail" name="profile-email">
+
+        <div class="row pay-step-title no-gutters">
+            <p>Informe o Endereço</p>
+        </div>
+
+        <div class="row pay-step-content no-gutters">
+            <form [formGroup]="secondFormGroup" id="secondFormGroup" class="col-md-12">
+                <div class="row no-gutters">
+                    <mat-form-field appearance="outline" class="col-md-8">
+                        <mat-label>Rua</mat-label>
+                        <mat-icon matSuffix>navigation</mat-icon>
+                        <input matInput formControlName="adressStreetCtrl" type="text" aria-label="Rua" placeholder="Rua" name="adress-street">
                     </mat-form-field>
 
-                    <table class="full-width" cellspacing="0">
-                        <tr>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                    <mat-label>CPF</mat-label>
-                                    <mat-icon matSuffix>picture_in_picture</mat-icon>
-                                    <input matInput formControlName="profCpfCtrl" type="text" aria-label="CPF" placeholder="CPF" name="profile-cpf">
-                                </mat-form-field>
-                            </td>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                        <mat-label>Telefone</mat-label>
-                                    <mat-icon matSuffix>phone</mat-icon>
-                                    <input matInput formControlName="profTelCtrl" type="text" aria-label="Telefone" placeholder="Telefone" name="profile-tel">
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                    </table>
-                    <mat-checkbox>Quero receber e-mails com promoções.</mat-checkbox>
-                </form>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button matStepperPrevious>Voltar</button>
-                <button mat-button matStepperNext>Próximo</button>
-            </mat-card-actions>
-        </mat-card>
+                    <mat-form-field appearance="outline" class="col-md-4">
+                        <mat-label>Número</mat-label>
+                        <mat-icon matSuffix>markunread</mat-icon>
+                        <input matInput formControlName="adressNumberCtrl" type="text" aria-label="Número" placeholder="Número" name="adress-number">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Complemento</mat-label>
+                        <mat-icon matSuffix>subtitles</mat-icon>
+                        <input matInput type="text" aria-label="Complemento" placeholder="Complemento" name="adress-comp">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-6">
+                        <mat-label>Bairro</mat-label>
+                        <mat-icon matSuffix>room</mat-icon>
+                        <input matInput formControlName="adressDistrictCtrl" type="text" aria-label="Bairro" placeholder="Bairro" name="adress-district">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-4">
+                        <mat-label>CEP</mat-label>
+                        <mat-icon matSuffix>local_library</mat-icon>
+                        <input matInput formControlName="adressCepCtrl" type="text" aria-label="CEP" placeholder="CEP" name="adress-cep">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="col-md-4">
+                            <mat-label>Cidade</mat-label>
+                        <mat-icon matSuffix>location_city</mat-icon>
+                        <input matInput formControlName="adressCityCtrl" type="text" aria-label="Cidade" placeholder="Cidade" name="adress-city">
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="col-md-4">
+                            <mat-label>Estado</mat-label>
+                        <mat-icon matSuffix>map</mat-icon>
+                        <input matInput formControlName="adressStateCtrl" type="text" aria-label="Estado" placeholder="Estado" name="adress-state">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="col-md-12">
+                        <mat-label>Destinatário</mat-label>
+                        <mat-icon matSuffix>person_pin</mat-icon>
+                        <input matInput type="text" aria-label="Destinatário" placeholder="Destinatário" name="adress-dest">
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+
+        <div class="row pay-step-buttons no-gutters">
+            <button mat-button matStepperPrevious class="btn secondary">Voltar</button>
+            <button mat-button matStepperNext class="btn primary">Próximo</button>
+        </div>
     </mat-step>
+
     <mat-step>
         <ng-template matStepLabel>Pagamento</ng-template>
-        <mat-card class="payment-card">
-            <mat-card-header>
-                <mat-card-title>Usuário</mat-card-title>
-            </mat-card-header>
-            
-            <mat-card-content>
-                <form [formGroup]="thirdFormGroup" id="thirdFormGroup" class="col-md-6">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Nome Completo</mat-label>
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                        <input matInput formControlName="profNameCtrl" type="text" aria-label="Nome Completo" placeholder="Nome Completo" name="profile-name">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <mat-icon matSuffix>email</mat-icon>
-                        <input matInput formControlName="profEmailCtrl" type="text" aria-label="E-mail" placeholder="E-mail" name="profile-email">
-                    </mat-form-field>
 
-                    <table class="full-width" cellspacing="0">
-                        <tr>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                    <mat-label>CPF</mat-label>
-                                    <mat-icon matSuffix>picture_in_picture</mat-icon>
-                                    <input matInput formControlName="profCpfCtrl" type="text" aria-label="CPF" placeholder="CPF" name="profile-cpf">
-                                </mat-form-field>
-                            </td>
-                            <td>
-                                <mat-form-field appearance="outline">
-                                        <mat-label>Telefone</mat-label>
-                                    <mat-icon matSuffix>phone</mat-icon>
-                                    <input matInput formControlName="profTelCtrl" type="text" aria-label="Telefone" placeholder="Telefone" name="profile-tel">
-                                </mat-form-field>
-                            </td>
-                        </tr>
-                    </table>
-                    <mat-checkbox>Quero receber e-mails com promoções.</mat-checkbox>
-                </form>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button matStepperPrevious>Voltar</button>
-                <button mat-button (click)="stepper.reset()">Reiniciar</button>
-            </mat-card-actions>
-        </mat-card>
+        <div class="row pay-step-title no-gutters">
+            <p>Pagamento</p>
+        </div>
+
+        <div class="row pay-step-content no-gutters">
+            <form [formGroup]="thirdFormGroup" id="thirdFormGroup" class="col-md-10">
+                <mat-form-field appearance="outline" class="col-md-8">
+                    <mat-label>Nº do cartão</mat-label>
+                    <mat-icon matSuffix>credit_card</mat-icon>
+                    <input matInput formControlName="payNumberCtrl" type="text" aria-label="Nº do cartão" placeholder="Nº do cartão" name="pay-number">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-2">
+                    <mat-select value="" formControlName="payValMonthCtrl" name="pay-val-month">
+                        <mat-option value="">Mês</mat-option>
+                        <mat-option value="1">Janeiro</mat-option>
+                        <mat-option value="2">Fevereiro</mat-option>
+                        <mat-option value="3">Março</mat-option>
+                        <mat-option value="4">Abril</mat-option>
+                        <mat-option value="5">Março</mat-option>
+                        <mat-option value="6">Junho</mat-option>
+                        <mat-option value="7">Julho</mat-option>
+                        <mat-option value="8">Agosto</mat-option>
+                        <mat-option value="9">Setembro</mat-option>
+                        <mat-option value="10">Outubro</mat-option>
+                        <mat-option value="11">Novembro</mat-option>
+                        <mat-option value="12">Dezembro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-2">
+                    <mat-select value="" formControlName="payValYearCtrl" name="pay-val-year">
+                        <mat-option value="">Ano</mat-option>
+                        <mat-option *ngFor="let year of years" [value]="year">
+                            {{year}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-10">
+                    <mat-label>Nome Escrito no Cartão</mat-label>
+                    <mat-icon matSuffix>face</mat-icon>
+                    <input matInput formControlName="payNameCtrl" type="text" aria-label="Nome Escrito no Cartão" placeholder="Nome Escrito no Cartão" name="pay-name">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="col-md-2">
+                    <mat-label>Código de Segurança</mat-label>
+                    <input matInput formControlName="payCodSegCtrl" type="text" aria-label="Código de Segurança" placeholder="Código de Segurança" name="pay-cod-seg">
+                </mat-form-field>
+            </form>
+        </div>
+
+        <div class="row pay-step-buttons no-gutters">
+            <button mat-button matStepperPrevious class="btn secondary">Voltar</button>
+            <button mat-button class="btn primary">Finalizar</button>
+        </div>
     </mat-step>
 </mat-horizontal-stepper>
