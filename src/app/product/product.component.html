@@ -25,6 +25,6 @@
         <p>{{item.title}}</p>
         <p [innerHTML]="item.description"></p>
         <p>{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
-        <button mat-button routerLink="/payment" queryParams="id: item.id" class="btn primary">COMPRAR</button>
+        <button mat-button routerLink="/payment" class="btn primary">COMPRAR</button>
     </div>
 </div>
