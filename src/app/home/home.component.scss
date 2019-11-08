@@ -1,0 +1,26 @@
+.card-product { margin-bottom:10px;}
+
+.list-item-img { overflow: hidden; height: 150px;}
+.list-item-title {line-height: 1.5em; height: 3em; overflow: hidden; text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;}
+
+.thumbnail {
+    margin: 0 !important;
+    width: calc(100% + .666px);
+    height: 100%;
+    -webkit-transition: opacity .2s ease,-webkit-transform .5s ease-out;
+    transition: transform .5s ease-out,opacity .2s ease;
+    transition: transform .5s ease-out,opacity .2s ease,-webkit-transform .5s ease-out;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.zoom { 
+    transition: all .2s ease-in-out; /* Animation */
+  }
+  
+.zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }

@@ -7,23 +7,28 @@
   
     <div class="container-fluid">
         <div class="row">
+            <div class="col-xs-6 col-lg-3" *ngFor="let item of itens">
+                
+                <mat-card class="card-product">
+                    <div class="list-item-img">
+                        <img mat-card-image [src]="item.image.url" [alt]="item.title" class="thumbnail zoom">
+                    </div>
 
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"  *ngFor="let item of itens">
-                <mat-card class="example-card">
                     <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>{{item.title}}</mat-card-title>
+                        <mat-card-title class="list-item-title">{{item.title}}</mat-card-title>
                     </mat-card-header>
-                    <img mat-card-image [src]="item.image.url" [alt]="item.title">
+                    
                     <mat-card-content>
-                        <p>{{item.description}}</p>
+                        <p>{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
                     </mat-card-content>
+
                     <mat-card-actions>
                         <button mat-button routerLink="/product">COMPRAR</button>
                     </mat-card-actions>
-                </mat-card>
-            </div>
 
+                </mat-card>
+
+            </div>
         </div>
     </div>   
 

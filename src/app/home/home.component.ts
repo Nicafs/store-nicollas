@@ -6,7 +6,7 @@ import { Itens } from './model/itens';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.homeService.getList()
-    .subscribe( itens => { this.itens = itens; console.log(itens); });
+    .subscribe( itens => { this.itens = itens; });
   }
 
 }
