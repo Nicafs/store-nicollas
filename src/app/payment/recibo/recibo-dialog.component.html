@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Sua Compra foi Realizada com Sucesso !!!</h1>
+<div mat-dialog-content>
+    <div class="row no-gutters">
+        <p>Resumo do Pedido</p>
+    </div>
+  
+  <div class="row no-gutters">
+        <div class="col-md-10">
+            <div *ngFor="let item of itemList; let i= index">
+                <mat-divider *ngIf="i > 0" style="background-color: gray; opacity: 0.4;"></mat-divider>
+
+                <div class="row">
+                    <div class="col-md-12 text-left">
+                        <div class="row">
+                            <span class="col-md-6"><strong>Produto: </strong>{{item.title}}</span>
+                            <span class="col-md-3"><strong>Quantidade: </strong>{{item.qtd}} X {{item.price | currency:'BRL':'symbol':'1.2-3'}}</span>  
+                            <span class="col-md-3"><strong>SubTotal: </strong>{{item.qtd * item.price | currency:'BRL':'symbol':'1.2-3'}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row no-gutters mt-md-5">
+                <div class="col-md-4 pay-resume-total">
+                    <span class="row no-gutters" appearance="outline" style="color: #259b24;">
+                        <span class="col-md-8 text-right">Você Economizou</span> <span class="col-md-4 text-right">{{totalEconomy | currency:'BRL':'symbol':'1.2-3'}}</span>
+                    </span>
+
+                    <mat-divider style="background-color: gray; opacity: 0.4;"></mat-divider>
+                
+                    <span class="row no-gutters" appearance="outline">
+                        <span style="color:gray;" class="col-md-8 text-right">Total </span> <span class="col-md-4 text-right" style="color: #468847;">{{totalCart | currency:'BRL':'symbol':'1.2-3'}}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button routerLink="/home" class="btn primary pr-md-5 pl-md-5" (click)="onNoClick()">Voltar</button>
+</div>

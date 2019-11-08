@@ -24,11 +24,13 @@ import { HomeComponent } from './home/home.component';
 // Modules
 import { ProductModule } from './product/product.module';
 import { PaymentModule } from './payment/payment.module';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

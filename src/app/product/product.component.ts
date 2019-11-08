@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ProductService } from './services/product.service';
-import { Item } from './model/item';
+import { Item } from '../shared/model/item';
 
-import * as $ from 'jquery';
-import 'bootstrap';
-import 'popper.js';
+import { GlobalService } from '../shared/services/global.service';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +17,7 @@ export class ProductComponent implements OnInit {
   qtdImgList: 4;
   qtdImgTransition: 1;
 
-  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { 
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private globalService: GlobalService) { 
    
   }
 
@@ -29,7 +27,7 @@ export class ProductComponent implements OnInit {
 
       if (id != null && id > 0) {
         this.productService.getProduct(id)
-          .subscribe( item => { this.item = item; });
+          .subscribe( item => { this.item = item; this.globalService.setCart(item); });
       }
     });
   }

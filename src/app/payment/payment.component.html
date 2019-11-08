@@ -112,6 +112,52 @@
         <ng-template matStepLabel>Pagamento</ng-template>
 
         <div class="row pay-step-title no-gutters">
+            <p>Resumo do Pedido</p>
+        </div>
+
+        <div class="row pay-step-content no-gutters">
+            <div class="col-md-10">
+                <div *ngFor="let item of itemList; let i= index">
+                    <div class="row text-center pay-resume no-gutters">
+                        <span class="col-md-4">
+                            <img [src]="item?.images[0].url" height="150" class="d-block w-100">
+                        </span>
+                        <span class="col-md-8 pl-md-3 pay-resume-description">
+                            <div class="row">
+                                <p class="col-md-12">
+                                    Produto: {{item.title}}
+                                </p>
+                                <p class="col-md-12">
+                                    Quantidade: {{item.qtd}} X {{item.price | currency:'BRL':'symbol':'1.2-3'}}
+                                </p>
+                                <p class="col-md-12">
+                                    SubTotal: {{item.qtd * item.price | currency:'BRL':'symbol':'1.2-3'}}
+                                </p>
+                            </div>
+                        </span>
+                    </div>
+
+                    <mat-divider *ngIf="itemList.length > 1 && i < itemList.length" style="background-color: gray; opacity: 0.4;"></mat-divider>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-md-4 pay-resume-total">
+                        <span class="row no-gutters" appearance="outline" style="color: #259b24;">
+                            <span class="col-md-8 text-right">Você esta economizando</span> <span class="col-md-4 text-right">{{totalEconomy | currency:'BRL':'symbol':'1.2-3'}}</span>
+                        </span>
+
+                        <mat-divider style="background-color: gray; opacity: 0.4;"></mat-divider>
+                    
+                        <span class="row no-gutters" appearance="outline">
+                            <span style="color:gray;" class="col-md-8 text-right">Total </span> <span class="col-md-4 text-right" style="color: #468847;">{{totalCart | currency:'BRL':'symbol':'1.2-3'}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="row pay-step-title no-gutters">
             <p>Pagamento</p>
         </div>
 
@@ -165,7 +211,7 @@
 
         <div class="row pay-step-buttons no-gutters">
             <button mat-button matStepperPrevious class="btn secondary">Voltar</button>
-            <button mat-button class="btn primary">Finalizar</button>
+            <button mat-button class="btn primary" (click)="openDialog()">Finalizar</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

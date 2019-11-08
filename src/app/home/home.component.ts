@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from './services/home.service';
-import { Itens } from './model/itens';
+import { Itens } from '../shared/model/itens';
 
 @Component({
   selector: 'app-home',

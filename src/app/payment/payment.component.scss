@@ -8,6 +8,18 @@
 
 .pay-step-title { font-size: 1.2em; color: #615e5e; margin-top: 20px; }
 
+.pay-step-content { margin-bottom: 20px;}
+.pay-resume span { margin:auto 0; }
+.pay-resume-total {margin-top: 10px;}
+.pay-resume-description {
+    text-align: left;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+
 .mat-checkbox { margin-left: 21px; }
 .mat-form-field { padding: 0px 20px; }
 .pay-step-buttons{ margin-left: 20px; }
