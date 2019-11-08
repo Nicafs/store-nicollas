@@ -12,6 +12,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //ANGULAR MATERIAL
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
 
 // HOME
 import { HomeComponent } from './home/home.component';
@@ -31,6 +36,11 @@ import { PaymentModule } from './payment/payment.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatDividerModule,
     ProductModule,
     PaymentModule
   ],

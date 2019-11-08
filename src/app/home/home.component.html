@@ -1,8 +1,50 @@
 <div id="homeComponent">
 
-    <header id="header" class="container-fluid">
-      <nav id="topBar" class="navbar navbar-expand-md">
-      </nav>
+    <header class="fixed">
+        <div class="header-content">
+            <div class="container">
+                <div class="logo-container">
+                    <a href="/" class="logo"></a>
+                </div>
+
+                <div class="header-search-box">
+                    <div class="search-box">
+                        <form action="/busca" id="searchForm">
+                            <mat-icon matSuffix class="search-icon">search</mat-icon>
+                            <input type="text"  aria-label="Campo de busca" placeholder="Buscar Ofertas" name="search">
+                        </form> 
+                    </div>
+                    <button mat-raised-button type="submit" class="search-submit btn primary">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            
+                <div class="header-right">
+                    <div class="header-right-container">
+                        <div id="user-container">
+                            <button mat-button [matMenuTriggerFor]="menuUser">Entrar</button>
+                            <mat-menu #menuUser="matMenu">
+                                <button mat-menu-item>Cadastre-se</button>
+                                <mat-divider></mat-divider>
+                                <button mat-menu-item>Entrar</button>
+                            </mat-menu>
+                        </div>
+
+                        <div id="cart-container">
+                            <button mat-button [matMenuTriggerFor]="menuCart"><mat-icon>shopping_cart</mat-icon></button>
+                            <mat-menu #menuCart="matMenu">
+                                <p>Carrinho</p>
+                                <mat-divider></mat-divider>
+                                <div class="empty-cart">
+                                    <p class="cart-title">Seu carrinho está vazio</p>
+                                    <span class="cart-description">Escolha uma oferta agora mesmo e aproveite!</span>
+                                </div>
+                            </mat-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
   
     <div class="container-fluid">
@@ -15,11 +57,11 @@
                     </div>
 
                     <mat-card-header>
-                        <mat-card-title class="list-item-title">{{item.title}}</mat-card-title>
+                        <mat-card-title class="list-item-title-txt">{{item.title}}</mat-card-title>
                     </mat-card-header>
                     
                     <mat-card-content>
-                        <p>{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
+                        <p class="list-item-content-txt">{{item.price | currency:'BRL':'symbol':'1.2-3'}}</p>
                     </mat-card-content>
 
                     <mat-card-actions>
